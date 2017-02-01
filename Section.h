@@ -1,12 +1,23 @@
 #include <vector>
+#include <string>
 #include "Book.h"
+
+enum Status { required=0, optional=1 };
+
+struct BookAssignment {
+	Status s;
+	Book* b;
+};
 
 class Section {
 public:
 	Section(int _section_num) 
 	: section_number(_section_num) {}
 
+	void assignBook(int s, Book* b);
+	std::string getBooks();
+
 private:
 	int section_number;
-	std::vector<Book> required_books, optional_books;
+	std::vector<BookAssignment> books;
 };

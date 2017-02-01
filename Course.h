@@ -1,4 +1,6 @@
 #include <string>
+#include <vector>
+#include "Section.h"
 
 class Course {
 public:
@@ -8,4 +10,5 @@ public:
 private:
 	std::string department_code;
 	int course_number;
+	std::vector<Section> sections;
 };

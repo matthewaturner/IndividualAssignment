@@ -1,7 +1,11 @@
+#include <map>
+#include "Book.h"
+#include "Courses.h"
 
-class Library {
+class Catalog {
 public:
 
 private:
-	std::
+	std::map<int, Book> books;
+	std::map<std::string, Course> courses;
 };
