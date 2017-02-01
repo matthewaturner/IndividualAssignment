@@ -19,4 +19,5 @@ private:
 	std::string title, isbn, author;
 	int edition;
 	int date_month, date_year;
+	int cost_new, cost_used, cost_rented, cost_electronic;
 };

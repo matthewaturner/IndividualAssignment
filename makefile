@@ -4,11 +4,17 @@ all: lib
 Book.o: Book.h Book.cpp
 	g++ -std=c++11 -c -g Book.h Book.cpp 
 
-Library.o: Library.cpp
-	g++ -std=c++11 -c -g Library.cpp
+Section.o: Section.h Section.cpp
+	g++ -std=c++11 -c -g Section.h Section.cpp
 
-lib: Library.o Book.o
-	g++ -std=c++11 -o lib Library.o Book.o
+Course.o: Course.h Course.cpp
+	g++ -std=c++11 -c -g Course.h Course.cpp
+
+Catalog.o: Catalog.cpp
+	g++ -std=c++11 -c -g Catalog.cpp
+
+lib: Catalog.o Course.o Section.o Book.o
+	g++ -std=c++11 -o lib main.cpp Catalog.o Course.o Section.o Book.o
 
 clean:
 	rm *.o *.gch
