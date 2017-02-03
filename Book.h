@@ -1,34 +1,40 @@
 #include <string>
-#include <ctime>
+#include <map>
 
 class Book {
 public:
-	// constructor
-	Book(std::string _isbn, std::string _author) 
-	: isbn(_isbn), author(_author) {}
+	// constructors
+	Book()
+	: isbn(), author() {}
+
+	Book(int _isbn, std::string _title) 
+	: isbn(_isbn), title(_title) {}
 
 	// getters
-	std::string getTitle()  { return title; }
-	std::string getIsbn()   { return isbn; }
-	std::string getAuthor() { return author; }
+	int getIsbn()           { return isbn; }
 	int getEdition()        { return edition; }
+	std::string getTitle()  { return title; }
+	std::string getAuthor() { return author; }
 	std::string getDate()   { return std::to_string(month) + "/" + std::to_string(year); }
+	std::string print()     { return std::to_string(isbn) + " " + title + " by " + author + "\n"
+				         + " Edition " + std::to_string(edition) + " " + getDate(); }
 
 	// setters
-	void setTitle(std::string _title)            { title = _title; }
-	void setIsbn(std::string _isbn)              { isbn = _isbn; }
-	void setAuthor(std::string _author)          { author = _author; }
-	void setEdition(int _edition)                { edition = _edition; }
-	void setDate(int _month, int _year)          { month = _month; year = _year; }
-	void setCostNew(int _cost_new)               { cost_new = _cost_new; }
-	void setCostUsed(int _cost_used)             { cost_used = _cost_used; }
-	void setCostRented(int _cost_rented)         { cost_rented = _cost_rented; }
-	void setCostElectronic(int _cost_electronic) { cost_electronic = _cost_electronic; }
+	void setTitle(std::string _title)    { title = _title; }
+	void setIsbn(int _isbn)              { isbn = _isbn; }
+	void setAuthor(std::string _author)  { author = _author; }
+	void setEdition(int _edition)        { edition = _edition; }
+	void setDate(int _month, int _year)  { month = _month; year = _year; }
+	void setCost(std::string _format, double _cost);
+
+	// operator overloading
+	std::ostream& operator<< (std::ostream& stream);
 	
 	// custom destructor does not need to be defined because we use standard types
 private:
-	std::string title, isbn, author;
+	int isbn;
+	std::string title, author;
 	int edition;
 	int month, year;
-	int cost_new, cost_used, cost_rented, cost_electronic;
+	std::map<std::string, double> prices;
 };

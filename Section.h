@@ -5,8 +5,8 @@
 enum Status { required=0, optional=1 };
 
 struct BookAssignment {
-	Status s;
-	Book* b;
+	Status status;
+	Book* book;
 };
 
 class Section {
