@@ -1,5 +1,6 @@
 #include <vector>
 #include <string>
+#include <iostream>
 #include "Book.h"
 
 enum Status { required=0, optional=1 };
@@ -11,11 +12,14 @@ struct BookAssignment {
 
 class Section {
 public:
-	Section(int _section_num) 
-	: section_number(_section_num) {}
+	Section()
+	: section_number() {}
+
+	Section(int _sn) 
+	: section_number(_sn) {}
 
 	void assignBook(int s, Book* b);
-	std::string getBooks();
+	void printBooks(std::ostream& os);
 
 private:
 	int section_number;

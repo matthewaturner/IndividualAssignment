@@ -1,1 +1,25 @@
-this is a test of the split function
+// Defining Books
+B 123 Titletown
+D 123 A Aaron Rodgers
+D 123 E 2
+D 123 D 12 1
+B 1234 Another Book
+M 1234 125.02 N
+M 1234 125.03 U
+M 1234 100.00 E
+
+// Print Books
+PB
+
+// Defining Courses
+C CSCE 315 Some stupid course
+C CSCE 411 Algorithms
+C MATH 470 Cryptographpy
+C ECEN 314 Hell on Earth
+
+// Print Courses
+PC 
+
+// Assigning Books to Courses
+A 123 CSCE 315 501 R
+A 1234 MATH 470 502 O
