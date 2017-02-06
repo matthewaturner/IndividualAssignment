@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include <set>
 #include "Department.h"
 
 class Catalog {
@@ -23,6 +24,14 @@ public:
 	int printBook(int isbn, std::ostream& os);
 	void printAllBooks(std::ostream& os);
 	void printCourses(std::ostream& os);
+	void printAverageBookCosts(std::string dept_code, std::ostream& os);
+	int printBooksBySection(std::string dept_code, int course_num, 
+			int sect_num, std::ostream& os);
+	int printBooksByCourse(std::string dept_code, int course_num,
+			std::ostream& os);
+	int printBooksByDepartment(std::string dept_code, std::ostream& os);
+	int printBooksByDate(std::string date, std::ostream& os);
+	
 
 private:
 	std::map<int, Book> books;

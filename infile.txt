@@ -2,7 +2,8 @@
 B 123 Titletown
 D 123 A Aaron Rodgers
 D 123 E 2
-D 123 D 12 1
+D 123 D 12/1
+M 123 12.50 R
 B 1234 Another Book
 M 1234 125.02 N
 M 1234 125.03 U
@@ -10,6 +11,9 @@ M 1234 100.00 E
 
 // Print Books
 PB
+
+// Print Individual Books
+GB 1234
 
 // Defining Courses
 C CSCE 315 Some stupid course
@@ -23,3 +27,15 @@ PC
 // Assigning Books to Courses
 A 123 CSCE 315 501 R
 A 1234 MATH 470 502 O
+
+// Printing Books By Section
+GS CSCE 315 501
+
+// Printing Books By Course
+GC MATH 470
+
+// Printing Books By Department
+PD CSCE
+
+// Printing Average Costs of Department
+PM CSCE

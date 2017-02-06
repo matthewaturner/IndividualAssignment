@@ -18,8 +18,11 @@ public:
 	Section(int _sn) 
 	: section_number(_sn) {}
 
+	std::vector<Book> getBooks();
 	void assignBook(int s, Book* b);
 	void printBooks(std::ostream& os);
+	int minCost();
+	int maxCost();
 
 private:
 	int section_number;
